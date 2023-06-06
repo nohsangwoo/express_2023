@@ -11,7 +11,10 @@
     "watch:compile": "npx babel src --extensions .ts --out-dir lib --source-maps --watch",
     "watch:types": "tsc --watch",
     "watch": "concurrently npm:watch:*",
-    "start": "node lib/index.js"
+    "start": "node lib/index.js",
+    "preserve": "npm run build",
+    "serve": "nodemon lib/app.js",
+    "serve-origin": "concurrently \"npx tsc -w\"  \"nodemon lib/app.js\""
   },
   "keywords": [],
   "author": "",
